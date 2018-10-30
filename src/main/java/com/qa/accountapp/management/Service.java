@@ -1,4 +1,4 @@
-package com.qa.accountapp.app;
+package com.qa.accountapp.management;
 
 import java.util.HashMap;
 import java.util.Map;

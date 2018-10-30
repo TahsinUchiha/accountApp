@@ -1,11 +1,11 @@
-package com.qa.accountapp.app;
+package com.qa.accountapp.management;
 
 public class Account {
 	private String firstName;
 	private String lastName;
-	private String accountNumber;
+	private int accountNumber;
 
-	public Account(String firstName, String lastName, String accountNumber) {
+	public Account(String firstName, String lastName, int accountNumber) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -28,11 +28,11 @@ public class Account {
 		this.lastName = lastName;
 	}
 
-	public String getAccountNumber() {
+	public int getAccountNumber() {
 		return accountNumber;
 	}
 
-	public void setAccountNumber(String accountNumber) {
+	public void setAccountNumber(int accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 
