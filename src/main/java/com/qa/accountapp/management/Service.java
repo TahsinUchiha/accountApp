@@ -1,0 +1,41 @@
+package com.qa.accountapp.management;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Service {
+	
+	private Map<Integer, Account> hmap = new HashMap<Integer, Account>();
+	
+	
+	
+	
+	private static int id = 1;
+
+
+
+	public void addAccount(Account accountToAdd) {
+		hmap.put(id, accountToAdd);
+		id++;
+	}
+
+	public Account searchAccount(Account idToSearch) {
+		Account result = hmap.get("idToSearch");
+		return result;
+	}
+	public void delAccount(Integer idToDel) {
+		hmap.remove(idToDel);
+	}
+
+	public Map<Integer, Account> getAccount() {
+		return hmap;
+	}
+
+	public void setAccountMap(Map<Integer, Account> account) {
+		this.hmap = account;
+	}
+	
+	
+	
+
+}
