@@ -36,8 +36,7 @@ public class Account {
 		this.accountNumber = accountNumber;
 	}
 
-	@Override
-	public String toString() {
+	public String giveAccount() {
 		return "Account [firstName=" + firstName + ", surname=" + lastName + ", accountNumber=" + accountNumber + "]";
 	}
 

@@ -5,30 +5,37 @@ import java.util.Map;
 
 public class Service {
 	
-	private Map<Integer, Account> account = new HashMap<Integer, Account>();
+	private Map<Integer, Account> hmap = new HashMap<Integer, Account>();
+	
+	
+	
+	
 	private static int id = 1;
 
 
 
 	public void addAccount(Account accountToAdd) {
-		account.put(id, accountToAdd);
+		hmap.put(id, accountToAdd);
 		id++;
 	}
 
 	public Account searchAccount(Account idToSearch) {
-		Account result = account.get("idToSearch");
+		Account result = hmap.get("idToSearch");
 		return result;
 	}
 	public void delAccount(Integer idToDel) {
-		account.remove(idToDel);
+		hmap.remove(idToDel);
 	}
 
 	public Map<Integer, Account> getAccount() {
-		return account;
+		return hmap;
 	}
 
 	public void setAccountMap(Map<Integer, Account> account) {
-		this.account = account;
+		this.hmap = account;
 	}
+	
+	
+	
 
 }
