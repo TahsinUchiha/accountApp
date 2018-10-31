@@ -32,8 +32,12 @@
     <version>4.8.1</version>
     <scope>test</scope>
 </dependency>
-    
-  
-  
+
+
+
+  	<dependency>
+  		<groupId>com.infosys</groupId>
+  		<artifactId>dependencies</artifactId>
+  	</dependency>
   </dependencies>
 </project>
