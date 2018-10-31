@@ -10,7 +10,7 @@ public class Service {
 
 	public Boolean searchFunction(String searchName) {
 
-		long entry = hmap.entrySet().stream().filter(e -> e.getValue().equals(searchName)).count();
+		long entry = hmap.entrySet().stream().filter(eachAccount -> eachAccount.getValue().equals(searchName)).count();
 
 		System.out.println(entry + "With this name");
 
@@ -19,6 +19,8 @@ public class Service {
 		} else
 
 			return false;
+		
+		//return (int) hmap.entrySet().stream().filter(eachAccount -> eachAccount.getValue().equals(searchName)).count();
 
 	}
 

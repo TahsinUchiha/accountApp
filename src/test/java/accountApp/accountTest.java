@@ -1,7 +1,5 @@
 package accountApp;
 
-import static org.junit.Assert.*;
-
 import org.junit.Assert;
 
 import com.qa.accountapp.management.Account;
@@ -10,11 +8,9 @@ import com.qa.accountapp.management.Service;
 import org.junit.Test;
 
 public class accountTest {
-
-
 	
 
-	
+
 	
 	@Test
 	public void test() {
@@ -40,6 +36,8 @@ public class accountTest {
 		
 
 	System.out.println(	acc1.giveAccount());
+	System.out.println(	acc2.giveAccount());
+	System.out.println(	acc3.giveAccount());
 		
 		
 		

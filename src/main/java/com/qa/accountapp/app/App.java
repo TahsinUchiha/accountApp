@@ -1,15 +1,10 @@
 package com.qa.accountapp.app;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.qa.accountapp.management.Account;
 import com.qa.accountapp.management.Service;
 
@@ -34,7 +29,7 @@ public class App {
 
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
-		} catch (IOException e) {
+		} catch (@SuppressWarnings("hiding") IOException e) {
 			e.printStackTrace();
 		}
 
