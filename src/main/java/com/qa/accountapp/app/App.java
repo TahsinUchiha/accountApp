@@ -29,7 +29,7 @@ public class App {
 
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
-		} catch (@SuppressWarnings("hiding") IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
