@@ -6,15 +6,10 @@ import java.util.Map;
 public class Service {
 	
 	private Map<Integer, Account> hmap = new HashMap<Integer, Account>();
-	
-	
-	
-	
 	private static int id = 1;
 
 
-
-	public void addAccount(Account accountToAdd) {
+ public void addAccount(Account accountToAdd) {
 		hmap.put(id, accountToAdd);
 		id++;
 	}
@@ -30,8 +25,7 @@ public class Service {
 	public Map<Integer, Account> getAccount() {
 		return hmap;
 	}
-
-	public void setAccountMap(Map<Integer, Account> account) {
+public void setAccountMap(Map<Integer, Account> account) {
 		this.hmap = account;
 	}
 	
