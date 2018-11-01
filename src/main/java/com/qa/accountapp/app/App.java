@@ -12,26 +12,26 @@ public class App {
 
 	public static void main(String[] args) throws JsonMappingException, JsonGenerationException {
 
-		Account staff = new Account("Joe", "Bob", 1234);
-		Account staff1 = new Account("Hi", "Poppy", 12345);
-		Account staff2 = new Account("This", "is a person", 123456);
-		Service all = new Service();
-		all.getAccount();
-		all.addAccount(staff);
-		all.addAccount(staff1);
-		all.addAccount(staff2);
+//		Account staff = new Account("Joe", "Bob", "1234");
+//		Account staff1 = new Account("Hi", "Poppy", "12345");
+////		Account staff2 = new Account("This", "is a person", "123456");
+//		Service all = new Service();
+//		all.getAccount();
+//		all.addAccount(staff);
+//		all.addAccount(staff1);
+//		all.addAccount(staff2);
 
-		ObjectMapper mapper = new ObjectMapper();
-		try {
-			String json = mapper.writeValueAsString(all);
-
-			System.out.println("JSON= " + json);
-
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		ObjectMapper mapper = new ObjectMapper();
+//		try {
+//			String json = mapper.writeValueAsString(all);
+//
+//			System.out.println("JSON= " + json);
+//
+//		} catch (JsonProcessingException e) {
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 
 		// // TODO Auto-generated method stub
 		//

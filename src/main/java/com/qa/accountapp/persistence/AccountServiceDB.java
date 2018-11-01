@@ -1,7 +1,6 @@
 package com.qa.accountapp.persistence;
 
 import com.qa.accountapp.management.Account;
-import com.qa.accountapp.service.*;
 
 public interface AccountServiceDB {
 	
@@ -14,8 +13,11 @@ public interface AccountServiceDB {
 	String updateAccount(Long id, String accountToUpdate);
 
 	String deleteAccount(Long id);
+
+	String getAccount(Long id);
+
+
 	
-	String searchAccount(Account idToSearch);
 
 }
 

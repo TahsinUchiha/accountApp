@@ -1,6 +1,8 @@
 package com.qa.accountapp.management;
-
+//changes
 import java.util.HashMap;
+
+import com.qa.util.JSONUtil;
 import java.util.Map;
 
 import javax.enterprise.inject.Alternative;
@@ -24,9 +26,20 @@ public class Service {
 
 			return false;
 		
-		//return (int) hmap.entrySet().stream().filter(eachAccount -> eachAccount.getValue().equals(searchName)).count();
 
 	}
+	
+
+//	public String getAllAccounts() {
+//		return util.getJSONForObject(Service.values());
+//	}
+//	
+//	public String createAccount(String account) {
+//		ID++;
+//		Account newAccount = util.getObjectForJSON(account, Account.class);
+//		accountMap.put(ID, newAccount);
+//		return account;
+//	}
 
 	public void addAccount(Account accountToAdd) {
 		hmap.put(id, accountToAdd);

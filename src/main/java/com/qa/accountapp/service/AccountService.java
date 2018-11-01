@@ -15,6 +15,9 @@ import com.qa.accountapp.persistence.AccountServiceDB;
 
 			String deleteAccount(Long id);
 
+			String getAccount(Long id);
+
+
 	 
 	
 

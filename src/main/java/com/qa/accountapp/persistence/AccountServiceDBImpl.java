@@ -5,6 +5,7 @@ import static javax.transaction.Transactional.TxType.SUPPORTS;
 
 import java.util.Collection;
 
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import javax.persistence.EntityManager;
@@ -16,6 +17,7 @@ import com.qa.accountapp.management.Account;
 import com.qa.util.JSONUtil;
 
 @Transactional(SUPPORTS)
+@Default
 public class AccountServiceDBImpl implements AccountServiceDB{
 
 	
@@ -26,22 +28,26 @@ public class AccountServiceDBImpl implements AccountServiceDB{
 	@Inject
 	private JSONUtil util;
 
-	@Override
+	
 	public String getAllAccounts() {
 		Query query =  manager.createQuery("Select a FROM Account a");
 		Collection<Account> accounts = (Collection<Account>) ((javax.persistence.Query) query).getResultList();
 		return util.getJSONForObject(accounts);
 	}
 
-	@Override
-	@Transactional(REQUIRED)
+
+	@Transactional
 	public String createAccount(String account) {
 		Account anAccount = util.getObjectForJSON(account, Account.class);
 		manager.persist(anAccount);
+		if (anAccount.getAccountNumber().equals(9999))
+				{
+			return "{\"message\": \"This account is blocked\"}";
+		} 
 		return "{\"message\": \"account has been sucessfully added\"}";
 	}
 
-	@Override
+
 	@Transactional(REQUIRED)
 	public String updateAccount(Long id, String accountToUpdate) {
 		Account updatedAccount = util.getObjectForJSON(accountToUpdate, Account.class);
@@ -54,10 +60,17 @@ public class AccountServiceDBImpl implements AccountServiceDB{
 	}
 	
 	
+	
+	@Transactional(REQUIRED)
+	public String getAccount(Long id) {
+		Account accountInDB = findAccount(id);
+		 return util.getJSONForObject(accountInDB);
+		
+	}
+
+
 
 	
-
-	@Override
 	@Transactional(REQUIRED)
 	public String deleteAccount(Long id) {
 		Account accountInDB = findAccount(id);
@@ -79,11 +92,9 @@ public class AccountServiceDBImpl implements AccountServiceDB{
 		this.util = util;
 	}
 
-	@Override
-	public String searchAccount(Account idToSearch) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
+
+
 
 }
 	

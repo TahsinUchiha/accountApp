@@ -8,6 +8,8 @@ import javax.persistence.Id;
 
 @Entity
 public class Account {
+
+	
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	@Column(length = 100)
@@ -15,17 +17,27 @@ public class Account {
 	@Column(length = 50)
 	private String lastName;
 	@Column(length = 4)
-	private int accountNumber;
+	private String accountNumber;
 	
 
+	public Account() {
+		
+	}
 
 
-
-	public Account(String firstName, String lastName, int accountNumber) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.accountNumber = accountNumber;
+//	public Account(String firstName, String lastName, String accountNumber) {
+//		super();
+//		this.firstName = firstName;
+//		this.lastName = lastName;
+//		this.accountNumber = accountNumber;
+//	}
+	
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 
@@ -45,11 +57,11 @@ public class Account {
 		this.lastName = lastName;
 	}
 
-	public int getAccountNumber() {
+	public String getAccountNumber() {
 		return accountNumber;
 	}
 
-	public void setAccountNumber(int accountNumber) {
+	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 
