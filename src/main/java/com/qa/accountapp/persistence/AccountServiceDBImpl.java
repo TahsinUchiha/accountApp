@@ -1,5 +1,8 @@
 package com.qa.accountapp.persistence;
 
+import static javax.transaction.Transactional.TxType.REQUIRED;
+import static javax.transaction.Transactional.TxType.SUPPORTS;
+
 import java.util.Collection;
 
 import javax.inject.Inject;
@@ -12,6 +15,7 @@ import javax.transaction.Transactional;
 import com.qa.accountapp.management.Account;
 import com.qa.util.JSONUtil;
 
+@Transactional(SUPPORTS)
 public class AccountServiceDBImpl implements AccountServiceDB{
 
 	
@@ -30,15 +34,15 @@ public class AccountServiceDBImpl implements AccountServiceDB{
 	}
 
 	@Override
-	@Transactional
-	public String createAccount(String accout) {
-		Account anAccount = util.getObjectForJSON(accout, Account.class);
+	@Transactional(REQUIRED)
+	public String createAccount(String account) {
+		Account anAccount = util.getObjectForJSON(account, Account.class);
 		manager.persist(anAccount);
 		return "{\"message\": \"account has been sucessfully added\"}";
 	}
 
 	@Override
-	@Transactional
+	@Transactional(REQUIRED)
 	public String updateAccount(Long id, String accountToUpdate) {
 		Account updatedAccount = util.getObjectForJSON(accountToUpdate, Account.class);
 		Account accountFromDB = findAccount(id);
@@ -50,7 +54,7 @@ public class AccountServiceDBImpl implements AccountServiceDB{
 	}
 
 	@Override
-	@Transactional
+	@Transactional(REQUIRED)
 	public String deleteAccount(Long id) {
 		Account accountInDB = findAccount(id);
 		if (accountInDB != null) {

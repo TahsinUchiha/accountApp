@@ -6,7 +6,7 @@ public interface AccountServiceDB {
 
 	String getAllAccounts();
 
-	String createAccount(String accout);
+	String createAccount(String account);
 
 	String updateAccount(Long id, String accountToUpdate);
 
