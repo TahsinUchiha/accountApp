@@ -17,12 +17,7 @@ public class Account {
 	@Column(length = 4)
 	private int accountNumber;
 	
-	
-	
-	
-	private String title;
-	
-	private String genre;
+
 
 
 
