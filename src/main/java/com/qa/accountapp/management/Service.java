@@ -3,6 +3,10 @@ package com.qa.accountapp.management;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.enterprise.inject.Alternative;
+
+import com.qa.accountapp.persistence.AccountServiceDB;
+@Alternative
 public class Service {
 
 	private Map<Integer, Account> hmap = new HashMap<Integer, Account>();

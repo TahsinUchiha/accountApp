@@ -52,6 +52,10 @@ public class AccountServiceDBImpl implements AccountServiceDB{
 		}
 		return "{\"message\": \"account sucessfully updated\"}";
 	}
+	
+	
+
+	
 
 	@Override
 	@Transactional(REQUIRED)
@@ -73,6 +77,12 @@ public class AccountServiceDBImpl implements AccountServiceDB{
 
 	public void setUtil(JSONUtil util) {
 		this.util = util;
+	}
+
+	@Override
+	public String searchAccount(Account idToSearch) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
